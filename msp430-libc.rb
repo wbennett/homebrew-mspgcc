@@ -17,11 +17,11 @@ class Msp430Libc < Formula
     gcc = Formula.factory('msp430-gcc')
     msppath = "#{binutils.opt_prefix}/msp430/bin:#{gcc.opt_prefix}/msp430/bin"
     cc = ENV['HOMEBREW_CC']
-    if cc == nil or cc == ""
+    unless cc.empty?
       cc = 'gcc'
     end
     cxx= ENV['HOMEBREW_CXX']
-    if cxx == nil or ccx == ""
+    unless cc.empty?
       cxx = 'g++'
     end
     Dir.chdir 'src' do

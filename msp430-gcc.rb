@@ -74,7 +74,8 @@ class Msp430Gcc < Formula
       cxx = 'g++'
     end
     system "../configure", "--target=msp430", "--enable-languages=c", "--program-prefix='msp430-'", "--prefix=#{prefix}", "--with-as=#{binutils.opt_prefix}/msp430/bin/as", "--with-ld=#{binutils.opt_prefix}/msp430/bin/ld"
-    system "CC=#{cc}","CXX=#{cxx}","make"
+    system "export CC=#{cc}","export CXX=#{cxx}"
+    system "make"
     system "make install"
 
     # Remove libiberty, which conflicts with the same library provided by
