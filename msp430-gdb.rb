@@ -24,11 +24,11 @@ class Msp430gdb < Formula
 
   def install
     cc = ENV['HOMEBREW_CC']
-    if cc.nil? or cc == ""
+    if cc == nil or cc == ""
       cc = 'gcc'
     end
     cxx= ENV['HOMEBREW_CXX']
-    if cxx.nil? or cc == ""
+    if cxx == nil or ccx == ""
       cxx = 'g++'
     end
     mkdir 'build' do
@@ -36,7 +36,7 @@ class Msp430gdb < Formula
                 "--target=msp430",
                 "--program-prefix='msp430-'",
                 "--prefix=#{prefix}"
-        system "CC=#{cc}","CXX=#{cxx}","make"
+        system "export CC=#{cc}","export CXX=#{cxx}","make"
         system "make install"
     end
   end

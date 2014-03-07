@@ -66,12 +66,12 @@ class Msp430Gcc < Formula
     mkdir 'build' do
     binutils = Formula.factory('msp430-binutils')
     cc = ENV['HOMEBREW_CC']
-    unless cc.nil?
-    cc = 'gcc'
+    if cc == nil or cc == ""
+      cc = 'gcc'
     end
     cxx= ENV['HOMEBREW_CXX']
-    unless cxx.nil?
-    cxx = 'g++'
+    if cxx == nil or ccx == ""
+      cxx = 'g++'
     end
     system "../configure", "--target=msp430", "--enable-languages=c", "--program-prefix='msp430-'", "--prefix=#{prefix}", "--with-as=#{binutils.opt_prefix}/msp430/bin/as", "--with-ld=#{binutils.opt_prefix}/msp430/bin/ld"
     system "CC=#{cc}","CXX=#{cxx}","make"

@@ -12,12 +12,13 @@ class MspDebug < Formula
     def install
         cc = ENV['HOMEBREW_CC']
         unless cc.nil?
-          cc = 'gcc'
+        cc = 'gcc'
         end
         cxx= ENV['HOMEBREW_CXX']
         unless cxx.nil?
-          cxx = 'g++'
+        cxx = 'g++'
         end
+
         system "CC=#{cc}","CXX=#{cxx}","make"
         system "make install"
     end

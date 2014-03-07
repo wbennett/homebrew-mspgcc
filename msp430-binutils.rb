@@ -20,13 +20,14 @@ class Msp430Binutils < Formula
 
   def install
       cc = ENV['HOMEBREW_CC']
-      unless cc.nil?
-          cc = 'gcc'
-      end
-      cxx= ENV['HOMEBREW_CXX']
-      unless cxx.nil?
-          cxx = 'g++'
-      end
+    cc = ENV['HOMEBREW_CC']
+    if cc == nil or cc == ""
+      cc = 'gcc'
+    end
+    cxx= ENV['HOMEBREW_CXX']
+    if cxx == nil or ccx == ""
+      cxx = 'g++'
+    end
     system "./configure", "--target=msp430", "--program-prefix='msp430-'", "--prefix=#{prefix}"
     system "CC=#{cc}","CXX=#{cxx}","make"
     system "make install"
