@@ -24,22 +24,20 @@ class Msp430gdb < Formula
 
   def install
     cc = ENV['HOMEBREW_CC']
-    unless cc.nil?
+    if cc.nil? or cc == ""
       cc = 'gcc'
     end
     cxx= ENV['HOMEBREW_CXX']
-    unless cxx.nil?
+    if cxx.nil? or cc == ""
       cxx = 'g++'
     end
     mkdir 'build' do
-        system "CC=#{cc}",
-                "CXX=#{cxx}",
-                "../configure",
+        system "../configure",
                 "--target=msp430",
                 "--enable-languages=c,c++",
                 "--program-prefix='msp430-'",
                 "--prefix=#{prefix}"
-        system "make"
+        system "CC=#{cc}","CXX=#{cxx}","make"
         system "make install"
     end
   end

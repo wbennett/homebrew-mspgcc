@@ -27,8 +27,8 @@ class Msp430Binutils < Formula
       unless cxx.nil?
           cxx = 'g++'
       end
-    system "CC=#{cc}","CXX=#{cxx}" "./configure", "--target=msp430", "--program-prefix='msp430-'", "--prefix=#{prefix}"
-    system "make"
+    system "./configure", "--target=msp430", "--program-prefix='msp430-'", "--prefix=#{prefix}"
+    system "CC=#{cc}","CXX=#{cxx}","make"
     system "make install"
   end
 end

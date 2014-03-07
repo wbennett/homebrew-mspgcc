@@ -64,23 +64,23 @@ class Msp430Gcc < Formula
 
     # gcc must be built outside of the source directory.
     mkdir 'build' do
-      binutils = Formula.factory('msp430-binutils')
-      cc = ENV['HOMEBREW_CC']
-      unless cc.nil?
-          cc = 'gcc'
-      end
-      cxx= ENV['HOMEBREW_CXX']
-      unless cxx.nil?
-          cxx = 'g++'
-      end
-      system "CC=#{cc}","CXX=#{cxx}","../configure", "--target=msp430", "--enable-languages=c,c++", "--program-prefix='msp430-'", "--prefix=#{prefix}", "--with-as=#{binutils.opt_prefix}/msp430/bin/as", "--with-ld=#{binutils.opt_prefix}/msp430/bin/ld"
-      system "make"
-      system "make install"
+    binutils = Formula.factory('msp430-binutils')
+    cc = ENV['HOMEBREW_CC']
+    unless cc.nil?
+    cc = 'gcc'
+    end
+    cxx= ENV['HOMEBREW_CXX']
+    unless cxx.nil?
+    cxx = 'g++'
+    end
+    system "../configure", "--target=msp430", "--enable-languages=c,c++", "--program-prefix='msp430-'", "--prefix=#{prefix}", "--with-as=#{binutils.opt_prefix}/msp430/bin/as", "--with-ld=#{binutils.opt_prefix}/msp430/bin/ld"
+    system "CC=#{cc}","CXX=#{cxx}","make"
+    system "make install"
 
-      # Remove libiberty, which conflicts with the same library provided by
-      # binutils.
-      # http://msp430-gcc-users.1086195.n5.nabble.com/overwriting-libiberty-td4215.html
-      # Fix inspired by:
+    # Remove libiberty, which conflicts with the same library provided by
+    # binutils.
+    # http://msp430-gcc-users.1086195.n5.nabble.com/overwriting-libiberty-td4215.html
+  # Fix inspired by:
       # https://github.com/larsimmisch/homebrew-avr/commit/8cc2a2e591b3a4bef09bd6efe2d7de95dfd92794
       multios = `#{cc} --print-multi-os-dir`.chomp
       File.unlink "#{prefix}/lib/#{multios}/libiberty.a"
