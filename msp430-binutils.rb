@@ -29,7 +29,8 @@ class Msp430Binutils < Formula
       cxx = 'g++'
     end
     system "./configure", "--target=msp430", "--program-prefix='msp430-'", "--prefix=#{prefix}"
-    system "export CC=#{cc}","export CXX=#{cxx}"
+    system "export CC=#{cc}"
+    system "export CXX=#{cxx}"
     system "make"
     system "make install"
   end

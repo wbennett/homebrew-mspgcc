@@ -26,7 +26,9 @@ class Msp430Libc < Formula
     end
     Dir.chdir 'src' do
       system "env", "PATH=#{msppath}:#{ENV['PATH']}", "make"
-      system "CC=#{cc}","CXX=#{cxx}" "make", "PREFIX=#{prefix}", "install"
+      system "export CC=#{cc}"
+      system "export CXX=#{cxx}" 
+      "make", "PREFIX=#{prefix}", "install"
     end
   end
 end

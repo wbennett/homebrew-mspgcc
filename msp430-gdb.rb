@@ -24,10 +24,12 @@ class Msp430gdb < Formula
 
   def install
     cc = ENV['HOMEBREW_CC']
+    print cc
     unless cc.empty?
       cc = 'gcc'
     end
     cxx= ENV['HOMEBREW_CXX']
+    print cxx
     unless cc.empty?
       cxx = 'g++'
     end
@@ -36,7 +38,8 @@ class Msp430gdb < Formula
                 "--target=msp430",
                 "--program-prefix='msp430-'",
                 "--prefix=#{prefix}"
-        system "export CC=#{cc}","export CXX=#{cxx}"
+        system "export CC=#{cc}"
+        system "export CXX=#{cxx}"
         system "make"
         system "make install"
     end
