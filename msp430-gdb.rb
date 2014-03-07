@@ -34,7 +34,6 @@ class Msp430gdb < Formula
     mkdir 'build' do
         system "../configure",
                 "--target=msp430",
-                "--enable-languages=c,c++",
                 "--program-prefix='msp430-'",
                 "--prefix=#{prefix}"
         system "CC=#{cc}","CXX=#{cxx}","make"
