@@ -11,10 +11,12 @@ class MspDebug < Formula
 
     def install
         cc = ENV['HOMEBREW_CC']
+        print cc
         unless cc.empty?
           cc = 'gcc'
         end
         cxx= ENV['HOMEBREW_CXX']
+        print cxx
         unless cc.empty?
           cxx = 'g++'
         end
