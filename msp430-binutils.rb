@@ -19,19 +19,7 @@ class Msp430Binutils < Formula
   end
 
   def install
-    cc = ENV['HOMEBREW_CC']
-    print cc
-    unless cc.empty?
-      cc = 'gcc'
-    end
-    cxx= ENV['HOMEBREW_CXX']
-    print cxx
-    unless cxx.empty?
-      cxx = 'g++'
-    end
     system "./configure", "--target=msp430", "--program-prefix='msp430-'", "--prefix=#{prefix}"
-    system "export CC=#{cc}"
-    system "export CXX=#{cxx}"
     system "make"
     system "make install"
   end

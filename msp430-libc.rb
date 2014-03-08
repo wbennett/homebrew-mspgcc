@@ -16,20 +16,8 @@ class Msp430Libc < Formula
     binutils = Formula.factory('msp430-binutils')
     gcc = Formula.factory('msp430-gcc')
     msppath = "#{binutils.opt_prefix}/msp430/bin:#{gcc.opt_prefix}/msp430/bin"
-    cc = ENV['HOMEBREW_CC']
-    print cc
-    unless cc.empty?
-      cc = 'gcc'
-    end
-    cxx= ENV['HOMEBREW_CXX']
-    print cxx
-    unless cxx.empty?
-      cxx = 'g++'
-    end
     Dir.chdir 'src' do
       system "env", "PATH=#{msppath}:#{ENV['PATH']}", "make"
-      system "export CC=#{cc}"
-      system "export CXX=#{cxx}"
       system "make", "PREFIX=#{prefix}", "install"
     end
   end
