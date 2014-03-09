@@ -53,6 +53,10 @@ class Msp430Gcc < Formula
   end
 
   def install
+
+    ENV['CC'] = "gcc-4.7"
+    ENV['CXX'] = "g++-4.7"
+    ENV["LD"] = "gcc-4.7"
     # The bootstrap process uses "xgcc", which doesn't have these flags. This
     # results in an error like the following:
     # configure: error: cannot compute suffix of object files: cannot compile
@@ -65,7 +69,7 @@ class Msp430Gcc < Formula
     # gcc must be built outside of the source directory.
     mkdir 'build' do
     binutils = Formula.factory('msp430-binutils')
-    cc = ENV['HOMEBREW_CC']
+    cc = ENV['CC']
     system "../configure", "--target=msp430", "--enable-languages=c", "--program-prefix='msp430-'", "--prefix=#{prefix}", "--with-as=#{binutils.opt_prefix}/msp430/bin/as", "--with-ld=#{binutils.opt_prefix}/msp430/bin/ld"
     system "make"
     system "make install"
