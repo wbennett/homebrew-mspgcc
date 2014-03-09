@@ -54,9 +54,9 @@ class Msp430Gcc < Formula
 
   def install
 
-    ENV['CC'] = "gcc-4.7"
-    ENV['CXX'] = "g++-4.7"
-    ENV["LD"] = "gcc-4.7"
+    ENV['CC'] = "gcc"
+    ENV['CXX'] = "g++"
+    ENV["LD"] = "gcc"
     # The bootstrap process uses "xgcc", which doesn't have these flags. This
     # results in an error like the following:
     # configure: error: cannot compute suffix of object files: cannot compile
