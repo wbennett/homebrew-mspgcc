@@ -15,7 +15,6 @@ class Msp430Binutils < Formula
     Mspgcc.new.brew do
       buildpath.install "msp430-binutils-2.22-20120911.patch"
     end
-    "msp430-binutils-2.22-20120911.patch"
   end
 
   def install
