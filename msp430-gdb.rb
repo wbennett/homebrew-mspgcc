@@ -1,10 +1,9 @@
 require 'formula'
 
-class Mspgdb_patch < Formula
-    homepage 'http://mspgcc.sourceforge.net'
-    url 'http://downloads.sourceforge.net/project/mspgcc/Patches/gdb-7.2a/msp430-gdb-7.2a-20111205.patch'
-        :using => :nounzip
-    sha1 'd84c029a914a9e43533fb8afefb4db6061e007f4'
+class Mspgcc < Formula
+  homepage 'http://mspgcc.sourceforge.net'
+  url ' http://downloads.sourceforge.net/project/mspgcc/mspgcc/DEVEL-4.7.x/mspgcc-20120911.tar.bz2'
+  sha1 '04f5860857dbb166d997737312494018b125f4bd'
 end
 
 class Msp430gdb < Formula
@@ -15,7 +14,7 @@ class Msp430gdb < Formula
 
   def patches
     #install the patch
-    Mspgdb_patch.new.brew do
+    Mspgcc.new.brew do
         buildpath.install 'msp430-gdb-7.2a-20111205.patch'
     end
 
