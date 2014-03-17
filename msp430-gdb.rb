@@ -26,7 +26,7 @@ class Msp430Gdb < Formula
                 "--target=msp430",
                 "--program-prefix='msp430-'",
                 "--prefix=#{prefix}"
-        system "make"
+        system "make","CFLAGS=-Wno-return-type"
         system "make install"
     end
   end
