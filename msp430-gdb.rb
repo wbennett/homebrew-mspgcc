@@ -2,7 +2,7 @@ require 'formula'
 
 class Mspgcc < Formula
   homepage 'http://mspgcc.sourceforge.net'
-  url ' http://downloads.sourceforge.net/project/mspgcc/mspgcc/DEVEL-4.7.x/mspgcc-20120911.tar.bz2'
+  url 'http://downloads.sourceforge.net/project/mspgcc/mspgcc/DEVEL-4.7.x/mspgcc-20120911.tar.bz2'
   sha1 '04f5860857dbb166d997737312494018b125f4bd'
 end
 
