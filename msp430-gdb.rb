@@ -18,7 +18,7 @@ class Msp430gdb < Formula
         buildpath.install 'msp430-gdb-7.2a-20111205.patch'
     end
 
-    "msp430-gdb-7.2a-20111205.patch"
+    "http://sourceforge.net/projects/mspgcc/files/Patches/gdb-7.2a/msp430-gdb-7.2a-20111205.patch/download"
   end
 
   def install
