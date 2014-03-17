@@ -22,11 +22,12 @@ class Msp430Gdb < Formula
 
   def install
     mkdir 'build' do
+        ENV['CFLAGS']='-Wno-return-local-addr'
         system "../configure",
                 "--target=msp430",
                 "--program-prefix='msp430-'",
                 "--prefix=#{prefix}"
-        system "make","CFLAGS=-Wno-return-type"
+        system "make"
         system "make install"
     end
   end
