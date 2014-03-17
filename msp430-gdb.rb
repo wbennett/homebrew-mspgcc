@@ -6,7 +6,7 @@ class Mspgcc < Formula
   sha1 '04f5860857dbb166d997737312494018b125f4bd'
 end
 
-class MspGdb < Formula
+class Msp430Gdb < Formula
   homepage 'http://mspgcc.sourceforge.net'
   url 'http://ftpmirror.gnu.org/gdb/gdb-7.2a.tar.bz2'
   sha1 '14daf8ccf1307f148f80c8db17f8e43f545c2691'
