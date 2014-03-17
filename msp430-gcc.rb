@@ -23,7 +23,7 @@ class Msp430Gcc < Formula
     Mspgcc.new.brew do
       buildpath.install "msp430-gcc-4.7.0-20120911.patch"
     end
-    "msp430-gcc-4.7.0-20120911.patch"
+    "http://sourceforge.net/projects/mspgcc/files/Patches/gcc-4.7.0/msp430-gcc-4.7.0-20120911.patch/download"
   end
 
   def install
