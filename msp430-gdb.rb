@@ -6,7 +6,7 @@ class Mspgcc < Formula
   sha1 '04f5860857dbb166d997737312494018b125f4bd'
 end
 
-class Msp430gdb < Formula
+class MspGdb < Formula
   homepage 'http://mspgcc.sourceforge.net'
   url 'http://ftpmirror.gnu.org/gdb/gdb-7.2a.tar.bz2'
   sha1 '14daf8ccf1307f148f80c8db17f8e43f545c2691'
@@ -17,7 +17,6 @@ class Msp430gdb < Formula
     Mspgcc.new.brew do
         buildpath.install 'msp430-gdb-7.2a-20111205.patch'
     end
-
     "http://sourceforge.net/projects/mspgcc/files/Patches/gdb-7.2a/msp430-gdb-7.2a-20111205.patch/download"
   end
 
