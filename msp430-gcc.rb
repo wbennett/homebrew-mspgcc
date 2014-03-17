@@ -49,7 +49,7 @@ class Msp430Gcc < Formula
         # http://msp430-gcc-users.1086195.n5.nabble.com/overwriting-libiberty-td4215.html
         # Fix inspired by:
         # https://github.com/larsimmisch/homebrew-avr/commit/8cc2a2e591b3a4bef09bd6efe2d7de95dfd92794
-        File.unlink "#{prefix}/lib/libiberty.a"
+        File.unlink "#{prefix}/lib/x86_64/libiberty.a"
     end
   end
 end
