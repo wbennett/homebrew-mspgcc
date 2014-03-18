@@ -23,7 +23,7 @@ class Msp430Gdb < Formula
   def install
     mkdir 'build' do
         #supress warnings
-        ENV['CFLAGS']='-w'
+        ENV['CFLAGS']='-Wno-error=return-type'
         system "../configure",
                 "--target=msp430",
                 "--program-prefix='msp430-'",
