@@ -23,7 +23,7 @@ class Msp430Gdb < Formula
   def install
     mkdir 'build' do
         #supress warnings
-        ENV['CFLAGS']='-Wno-error=return-type -Wno-error=sizeof-pointer-memaccess'
+        ENV['CFLAGS']='-Wno-error=return-type -Wno-error=sizeof-pointer-memaccess -Wno-error=sometimes-uninitialized'
         system "../configure",
                 "--target=msp430",
                 "--program-prefix='msp430-'",
