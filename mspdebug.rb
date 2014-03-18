@@ -1,7 +1,7 @@
 require 'formula'
 
 class MspDebug < Formula
-    homepage 'http://mspgcc.sourceforge.net'
+    homepage 'http://mspdebug.sourceforge.net'
     url 'http://sourceforge.net/projects/mspdebug/files/mspdebug-0.21.tar.gz'
     sha1 'a439acd166e90bfd19ddf2c3459eee9643e55368'
     env :std
