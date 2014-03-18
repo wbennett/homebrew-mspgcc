@@ -22,7 +22,8 @@ class Msp430Gdb < Formula
 
   def install
     mkdir 'build' do
-        ENV['CFLAGS']='-Wno-return-local-address'
+        #supress warnings
+        ENV['CFLAGS']='-w'
         system "../configure",
                 "--target=msp430",
                 "--program-prefix='msp430-'",
